@@ -1,218 +1,381 @@
-### 📌 HTML Forms
+# 📌 HTML Forms
 
-- HTML Forms servem para **capturar dados do usuário**.
+- Servem para capturar dados do usuário.
 - Muito usados em:
     - login
     - cadastro
     - pesquisas
-    - formulários
-    - calculadoras
-- Permitem interação entre usuário e página web.
+    - uploads
+- Permitem comunicação entre usuário, front-end e back-end.
 
 ---
 
-### 📌 Input e Output
-
-- **Input:** entrada de dados.
-- **Output:** saída/apresentação dos dados.
-
-Exemplo:
-
-- Digitar nome → input
-- Mostrar resultado → output
-
----
-
-### 📌 Estrutura básica do formulário
+# 📌 Estrutura do formulário
 
 ```
-<form action="/" method="GET">  <input type="text" name="nome">  <button type="submit">    Enviar  </button></form>
+<form action="/" method="POST">  <input type="text" name="nome">  <button type="submit">Enviar</button></form>
 ```
 
 ---
 
-### 📌 Tag `<form>`
+# 📌 Tag `<form>`
 
-- Elemento responsável por criar formulários.
-- Possui atributos importantes:
-    - `action`
-    - `method`
+## 🔹 `action`
 
----
+- Define para onde os dados serão enviados.
 
-### 📌 Action
+## 🔹 `method`
 
-- Define **para onde os dados serão enviados**.
+- Define como os dados serão enviados.
 
-```
-<form action="/">
-```
-
-- Se não definir:
-    - o formulário envia para a própria página.
-
----
-
-### 📌 Method
-
-- Define **como os dados serão enviados**.
-- Usa verbos HTTP.
-
----
-
-### 📌 GET
-
-```
-<form method="GET">
-```
+### `GET`
 
 - Dados aparecem na URL.
-- Método padrão do formulário.
+- Muito usado em buscas e filtros.
 
-Exemplo:
+### `POST`
 
-```
-site.com?nome=Mike
-```
-
-#### 🔹 Características
-
-- Dados visíveis
-- Muito usado em:
-    - buscas
-    - filtros
-    - pesquisas
-
----
-
-### 📌 POST
-
-```
-<form method="POST">
-```
-
-#### 🔹 Características
-
-- Dados não aparecem na URL.
-- Método mais seguro.
-- Muito usado em:
+- Dados enviados ocultos.
+- Mais seguro.
+- Muito usado para:
     - login
-    - senha
-    - cadastro
+    - senhas
+    - uploads
 
 ---
 
-### 📌 HTTP
+# 📌 Botões (`<button>`)
 
-- HTTP é um protocolo de comunicação da web.
-- Possui verbos como:
-    - GET
-    - POST
+## 🔹 `submit`
 
----
+- Envia formulário.
 
-### 📌 Live Preview no VS Code
+## 🔹 `reset`
 
-- Professor utilizou a extensão Live Preview.
-- Ela:
-    - cria um servidor local
-    - mostra pré-visualização da página
-    - facilita testes em tempo real
+- Limpa os campos.
 
----
-
-### 📌 Tag `<button>`
-
-- Cria botões interativos no HTML.
-
-```
-<button>Enviar</button>
-```
-
-- O estilo depende do navegador.
-
----
-
-### 📌 Tipos de botão
-
-#### 🔹 submit
-
-```
-<button type="submit">  Enviar</button>
-```
-
-- Envia o formulário.
-- É o tipo padrão.
-
----
-
-#### 🔹 reset
-
-```
-<button type="reset">  Limpar</button>
-```
-
-- Limpa os campos do formulário.
-
----
-
-#### 🔹 button
-
-```
-<button type="button">  Clique</button>
-```
+## 🔹 `button`
 
 - Botão comum.
-- Não envia formulário.
 - Geralmente usado com JavaScript.
 
 ---
 
-### 📌 autofocus
+# 📌 Input (`<input>`)
 
-```
-<button autofocus>  Entrar</button>
-```
-
-- Coloca foco automático no elemento ao carregar a página.
-- Nem todos os navegadores aplicam igual.
+- Campo de entrada de dados.
+- O comportamento muda conforme o `type`.
 
 ---
 
-### 📌 disabled
+# 📌 Atributos gerais do Input
 
-```
-<button disabled>  Bloqueado</button>
-```
+## 🔹 `name`
 
-- Desativa o botão.
-- Muito usado para impedir envio antes do preenchimento correto.
+- Nome do dado enviado.
+
+## 🔹 `value`
+
+- Valor padrão do campo.
+
+## 🔹 `placeholder`
+
+- Texto de dica.
+- Não envia valor.
+
+## 🔹 `required`
+
+- Campo obrigatório.
+
+## 🔹 `readonly`
+
+- Apenas leitura.
+
+## 🔹 `disabled`
+
+- Campo desabilitado.
+
+## 🔹 `autofocus`
+
+- Campo inicia focado.
+
+## 🔹 `autocomplete`
+
+- Navegador sugere preenchimento.
+
+## 🔹 `form`
+
+- Liga input a formulário externo.
 
 ---
 
-### 📌 name e value no botão
+# 📌 Input `text`
 
-```
-<button  name="botao1"  value="enviar">  Submit</button>
-```
-
-Exemplo enviado pela URL:
-
-```
-?botao1=enviar
-```
-
-#### 🔹 Utilidade
-
-- Identificar qual botão foi clicado.
-- Enviar informações extras no formulário.
+- Campo de texto simples.
 
 ---
 
-### 📌 Ideia central
+# 📌 Input `number`
 
-- Forms permitem comunicação entre:
-    - front-end
-    - usuário
-    - back-end
-- São fundamentais para capturar e enviar dados na web.
+- Campo numérico.
+
+## 🔹 `min`
+
+- Valor mínimo.
+
+## 🔹 `max`
+
+- Valor máximo.
+
+## 🔹 `step`
+
+- Intervalo entre números.
+
+---
+
+# 📌 Input `email`
+
+- Faz validação básica de e-mail.
+
+## 🔹 `multiple`
+
+- Permite vários e-mails.
+
+## 🔹 `minlength`
+
+- Quantidade mínima de caracteres.
+
+## 🔹 `maxlength`
+
+- Limite máximo.
+
+## 🔹 `pattern`
+
+- Validação com expressão regular.
+
+## 🔹 `title`
+
+- Mensagem explicativa da validação.
+
+---
+
+# 📌 Expressão Regular (`pattern`)
+
+- Define padrões obrigatórios de texto.
+- Muito usado para:
+    - e-mails
+    - senhas
+    - formatos específicos
+
+---
+
+# 📌 Input `password`
+
+- Oculta caracteres digitados.
+
+## 🔹 Segurança
+
+- Preferir `POST`.
+- Evitar envio via `GET`.
+
+## 🔹 Recursos
+
+- `minlength`
+- `maxlength`
+- `pattern`
+- `inputmode`
+
+---
+
+# 📌 Input `file`
+
+- Upload de arquivos.
+
+## 🔹 Importante
+
+```
+enctype="multipart/form-data"
+```
+
+## 🔹 Recursos
+
+### `multiple`
+
+- Permite vários arquivos.
+
+### `accept`
+
+- Restringe tipos permitidos.
+
+## 🔹 Exemplos
+
+```
+accept="image/*"accept="video/*"accept=".pdf"
+```
+
+---
+
+# 📌 Input `range`
+
+- Controle deslizante (_slider_).
+
+## 🔹 Recursos
+
+- `min`
+- `max`
+- `step`
+- `value`
+
+---
+
+# 📌 Input `color`
+
+- Abre seletor de cores.
+
+## 🔹 `value`
+
+- Cor inicial.
+
+## 🔹 `list` + `datalist`
+
+- Permite sugestões de cores pré-definidas.
+
+---
+
+# 📌 Input `checkbox`
+
+- Permite múltiplas seleções.
+
+## 🔹 Comportamento
+
+- Marcado → envia valor.
+- Desmarcado → não envia.
+
+## 🔹 Recursos
+
+- `checked`
+- `value`
+
+---
+
+# 📌 Input `radio`
+
+- Permite apenas uma seleção por grupo.
+
+## 🔹 Funcionamento
+
+- Inputs com mesmo `name` pertencem ao mesmo grupo.
+
+---
+
+# 📌 Input `hidden`
+
+- Campo invisível.
+- Muito usado para:
+    - IDs
+    - tokens
+    - informações internas
+
+---
+
+# 📌 Label (`<label>`)
+
+- Associa descrição ao campo.
+
+## 🔹 Importância
+
+- Fundamental para acessibilidade.
+- Leitores de tela utilizam labels.
+
+## 🔹 Associação
+
+### `for`
+
+- Liga label ao `id` do input.
+
+### Alternativa
+
+- Input pode ficar dentro do próprio label.
+
+---
+
+# 📌 Textarea (`<textarea>`)
+
+- Campo para textos longos.
+
+## 🔹 Recursos
+
+- `maxlength`
+- `minlength`
+- `placeholder`
+- `required`
+- `wrap="off"`
+
+## 🔹 Observação
+
+- `rows` e `cols` existem, mas CSS costuma ser preferido.
+
+---
+
+# 📌 Select (`<select>`)
+
+- Campo de seleção de opções.
+
+## 🔹 Recursos
+
+### `option`
+
+- Define opções.
+
+### `multiple`
+
+- Permite múltiplas escolhas.
+
+### `size`
+
+- Quantidade visível de opções.
+
+### `optgroup`
+
+- Agrupa opções relacionadas.
+
+---
+
+# 📌 Fieldset (`<fieldset>`)
+
+- Agrupa campos relacionados.
+
+## 🔹 `legend`
+
+- Título do agrupamento.
+
+## 🔹 `disabled`
+
+- Desabilita todos os campos internos.
+
+## 🔹 Observação
+
+- Campos desabilitados não são enviados.
+
+---
+
+# 📌 Compatibilidade e documentação
+
+## 🔹 Documentação
+
+- [MDN Web Docs](https://developer.mozilla.org/?utm_source=chatgpt.com)
+- [DevDocs](https://devdocs.io/?utm_source=chatgpt.com)
+
+## 🔹 Compatibilidade entre navegadores
+
+- [Can I Use](https://caniuse.com/?utm_source=chatgpt.com)
+
+---
+
+# 📌 Ideia central
+
+- HTML Forms capturam e enviam dados do usuário.
+- Inputs possuem vários tipos e validações nativas.
+- HTML resolve validações básicas sem JavaScript.
+- CSS melhora aparência.
+- JavaScript adiciona comportamentos e validações avançadas.
